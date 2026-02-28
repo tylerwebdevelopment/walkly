@@ -1,0 +1,15 @@
+/* Import Everything For Easy Access */
+/* Modern Css Reset */
+@import url('./reset.css');
+@import url('./variables.css');
+@import url('./colors.css');
+@import url('./typography.css');
+@import url('./utilities.css');
+
+body{
+  background-color: hsl(0 0 95%);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
