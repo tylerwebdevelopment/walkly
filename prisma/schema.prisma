@@ -15,8 +15,7 @@ datasource db {
 
 model User {
   id            String    @id
-  firstname     String
-  lastname      String
+  name          String
   email         String
   emailVerified Boolean   @default(false)
   image         String?

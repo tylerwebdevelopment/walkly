@@ -1,0 +1,19 @@
+/* Flex Utilites */
+.flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+/* Flex Alignment Utilities */
+.justify-center{
+  justify-content: center;
+}
+/* Margin Utilites */
+
+/* With Utilites */
+.w-full{
+  width: 100%;
+}
+
+/* Spacing Utilities */
