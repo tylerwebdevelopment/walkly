@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { Button } from '@/component';
+import { Button } from '@/components/walkly';
 import { AccountSignIn } from '@/actions/auth/signin';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -28,9 +28,9 @@ const SignIn = () => {
   };
 
   return (
-    <div className=''>
-      <h1 className=''>Sign In</h1>
-      <form onSubmit={handleSubmit} className=''>
+    <div className="">
+      <h1 className="">Sign In</h1>
+      <form onSubmit={handleSubmit} className="">
         <div className="flex flex-row">
           <div className="input-group">
             <input
@@ -57,8 +57,12 @@ const SignIn = () => {
         </div>
         <div className="flex justify-center flex-col w-full">
           <Button type="submit">Continue</Button>
-          <Link href="/forgot-password" className='text-center'>Forgot Password?</Link>
-          <Link href="/signup" className='text-center'>Don&apos;t have an account? Sign Up</Link>
+          <Link href="/forgot-password" className="text-center">
+            Forgot Password?
+          </Link>
+          <Link href="/signup" className="text-center">
+            Don&apos;t have an account? Sign Up
+          </Link>
         </div>
       </form>
     </div>

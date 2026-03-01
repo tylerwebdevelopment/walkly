@@ -1,12 +1,11 @@
 'use client';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import Button from '@/component/Button';
+import Button from '@/components/walkly/Button';
 import { AccountSignUp } from '@/actions/auth/signup';
 import Link from 'next/link';
 
 const Signup = () => {
-  
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [errors, setErrors] = useState<any>({});
 
@@ -22,9 +21,9 @@ const Signup = () => {
   };
 
   return (
-    <div className=''>
-      <h1 className=''>Create Account</h1>
-      <form onSubmit={handleSubmit} className=''>
+    <div className="">
+      <h1 className="">Create Account</h1>
+      <form onSubmit={handleSubmit} className="">
         <div className="flex flex-row">
           <div className="input-group">
             <input
@@ -83,7 +82,9 @@ const Signup = () => {
         </div>
         <div className="flex justify-center flex-col w-full">
           <Button type="submit">Create Account</Button>
-          <Link href="/signin" className='text-center'>Already have an account? Sign In</Link>
+          <Link href="/signin" className="text-center">
+            Already have an account? Sign In
+          </Link>
         </div>
       </form>
     </div>

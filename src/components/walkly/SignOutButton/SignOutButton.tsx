@@ -1,7 +1,7 @@
 "use client";
 import { redirect } from "next/navigation";
 import {AccountSignOut} from '@/actions/auth/signout'
-import Button from '@/components/Button';
+import Button from '@/components/walkly/Button';
 
 
 const SignOutButton = () => {

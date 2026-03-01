@@ -7,7 +7,7 @@ import '@/styles/global.css';
 
 
 //Import Navbar and Footer Components for Default Layout
-import { Navbar, Footer } from '@/component';
+import { Navbar, Footer } from '@/components/layout';
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
 
