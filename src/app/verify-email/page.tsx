@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { authClient } from '@/lib/auth-client';
 import { useEffect, useState } from 'react';
-import Button from '@/components/Button';
+import Button from '@/component/Button';
 
 const VerifyEmailPage = () => {
   const router = useRouter();

@@ -1,11 +1,10 @@
 'use client';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { Button } from '@/components';
-import styles from './SignIn.module.css';
-import clsx from 'clsx';
+import { Button } from '@/component';
 import { AccountSignIn } from '@/actions/auth/signin';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const SignIn = () => {
   const router = useRouter();
@@ -29,9 +28,9 @@ const SignIn = () => {
   };
 
   return (
-    <div className={clsx(styles['SignInContainer'])}>
-      <h1 className={clsx(styles['SignInHeading'])}>Sign In</h1>
-      <form onSubmit={handleSubmit} className={clsx(styles['SignInForm'])}>
+    <div className=''>
+      <h1 className=''>Sign In</h1>
+      <form onSubmit={handleSubmit} className=''>
         <div className="flex flex-row">
           <div className="input-group">
             <input
@@ -56,8 +55,10 @@ const SignIn = () => {
             {errors?.password?.errors[0] && <p>{errors.password.errors[0]}</p>}
           </div>
         </div>
-        <div className="flex justify-center w-full flex-row">
+        <div className="flex justify-center flex-col w-full">
           <Button type="submit">Continue</Button>
+          <Link href="/forgot-password" className='text-center'>Forgot Password?</Link>
+          <Link href="/signup" className='text-center'>Don&apos;t have an account? Sign Up</Link>
         </div>
       </form>
     </div>

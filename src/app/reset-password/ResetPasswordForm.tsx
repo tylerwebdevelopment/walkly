@@ -1,6 +1,6 @@
 'use client';
 import { AccountResetPassword } from '@/actions/auth/reset-password';
-import Button from '@/components/Button';
+import Button from '@/component/Button';
 import { redirect } from 'next/navigation';
 import { useState } from 'react';
 import type { FormEvent } from 'react';

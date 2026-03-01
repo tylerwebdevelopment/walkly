@@ -5,15 +5,23 @@
 .flex-row {
   flex-direction: row;
 }
+.flex-col {
+  flex-direction: column;
+}
 /* Flex Alignment Utilities */
-.justify-center{
+.justify-center {
   justify-content: center;
 }
 /* Margin Utilites */
 
 /* With Utilites */
-.w-full{
+.w-full {
   width: 100%;
 }
 
 /* Spacing Utilities */
+
+/* Text Utilites */
+.text-center {
+  text-align: center;
+}

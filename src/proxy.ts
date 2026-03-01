@@ -10,7 +10,7 @@ export const proxy = async (request : NextRequest) => {
     headers: request.headers
   })
 
-  const isAuthPage = pathname.startsWith('/signin') || pathname.startsWith('/signup');
+  const isAuthPage = pathname.startsWith('/signin') || pathname.startsWith('/signup') || pathname.startsWith('/forgot-password') || pathname.startsWith('/reset-password');
 
   const isVerifyPage = pathname.startsWith('/verify-email');
 
@@ -30,5 +30,5 @@ export const proxy = async (request : NextRequest) => {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/signin', '/signup', '/verify-email']
+  matcher: ['/dashboard/:path*', '/signin', '/signup', '/verify-email', '/forgot-password', '/reset-password']
 }

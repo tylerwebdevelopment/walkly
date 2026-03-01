@@ -1,10 +1,9 @@
 'use client';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import clsx from 'clsx';
-import styles from './Signup.module.css';
-import Button from '@/components/Button';
+import Button from '@/component/Button';
 import { AccountSignUp } from '@/actions/auth/signup';
+import Link from 'next/link';
 
 const Signup = () => {
   
@@ -23,9 +22,9 @@ const Signup = () => {
   };
 
   return (
-    <div className={clsx(styles['SignupContainer'])}>
-      <h1 className={clsx(styles['SignupHeading'])}>Create Account</h1>
-      <form onSubmit={handleSubmit} className={clsx(styles['SignupForm'])}>
+    <div className=''>
+      <h1 className=''>Create Account</h1>
+      <form onSubmit={handleSubmit} className=''>
         <div className="flex flex-row">
           <div className="input-group">
             <input
@@ -82,8 +81,9 @@ const Signup = () => {
             {errors?.password?.errors[0] && <p>{errors.password.errors[0]}</p>}
           </div>
         </div>
-        <div className="flex justify-center w-full flex-row">
+        <div className="flex justify-center flex-col w-full">
           <Button type="submit">Create Account</Button>
+          <Link href="/signin" className='text-center'>Already have an account? Sign In</Link>
         </div>
       </form>
     </div>

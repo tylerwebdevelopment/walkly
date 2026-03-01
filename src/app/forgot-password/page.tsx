@@ -1,6 +1,6 @@
 'use client';
 import { AccountForgotPassword } from '@/actions/auth/forgot-password';
-import Button from '@/components/Button';
+import Button from '@/component/Button';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 
