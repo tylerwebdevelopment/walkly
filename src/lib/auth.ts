@@ -15,7 +15,24 @@ export const auth = betterAuth({
     emailAndPassword: {
       enabled: true,
       autoSignIn: false,
-      requireEmailVerification: false, 
+      requireEmailVerification: false,
+      sendResetPassword: async ({user, url}) => {
+        const {data, error} = await resend.emails.send({
+          from: 'security@walkly.fit',
+          to: user.email,
+          subject: "Walkly Password Reset",
+          html: `
+            <h2>Account Password Reset Link</h2>
+            <p>Here is your request password reset link! If you did not request this please ignore.</p>
+            <a href="${url}">Reset Password</a>
+          `
+        });
+
+        if(error){
+          console.log(error);
+        }
+        return console.log(data);
+      },
     },
     emailVerification: {
       sendVerificationEmail: async ({user, url}) => {
