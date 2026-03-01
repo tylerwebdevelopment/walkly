@@ -36,7 +36,11 @@ export async function AccountSignUp(formData: FormData){
       }
     });
 
-    
+    await auth.api.sendVerificationEmail({
+      body: {
+        email
+      }
+    })
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch(err: any){
     return {errors: {email: {errors: [err.message]}}};

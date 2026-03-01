@@ -12,19 +12,23 @@ export const proxy = async (request : NextRequest) => {
 
   const isAuthPage = pathname.startsWith('/signin') || pathname.startsWith('/signup');
 
+  const isVerifyPage = pathname.startsWith('/verify-email');
+
   const isProtectedPage = pathname.startsWith('/dashboard');
 
-  if(!session && isProtectedPage){
-    return NextResponse.redirect(new URL('/signin', request.url))
+  if(!session && (isProtectedPage || isVerifyPage)){
+    return NextResponse.redirect(new URL('/signin', request.url));
   }
-
-  if(session && isAuthPage){
-    return NextResponse.redirect(new URL('/dashboard', request.url))
+  if(session && !session.user.emailVerified && isProtectedPage){
+    return NextResponse.redirect(new URL('/verify-email', request.url));
+  }
+  if(session && session.user.emailVerified && (isAuthPage || isVerifyPage)){
+    return NextResponse.redirect(new URL('/dashboard', request.url));
   }
 
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/signin', '/signup']
+  matcher: ['/dashboard/:path*', '/signin', '/signup', '/verify-email']
 }
