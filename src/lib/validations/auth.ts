@@ -11,3 +11,8 @@ export const SignUpSchema = z.object({
   message: 'Passwords Do Not Match',
   path: ['confirmPassword']
 })
+
+export const SignInSchema = z.object({
+  email: z.string().nonempty('Email Is Required').email('Invalid Email Address'),
+  password: z.string().min(1, 'Password Is Required')
+})

@@ -7,6 +7,7 @@ import Button from '@/components/Button';
 import { AccountSignUp } from '@/actions/auth/signup';
 
 const Signup = () => {
+  
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [errors, setErrors] = useState<any>({});
 

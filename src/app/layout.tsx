@@ -10,6 +10,8 @@ import clsx from "clsx";
 
 //Import Navbar and Footer Components for Default Layout
 import {Navbar, Footer} from '@/components';
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,11 +29,15 @@ export const metadata: Metadata = {
   description: "Coming Soon",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const session = await auth.api.getSession({
+    headers: await headers()
+  })
   return (
     <html className={`${inter.variable} ${poppins.variable}`} lang="en">
       <body>

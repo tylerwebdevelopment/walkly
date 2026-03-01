@@ -36,7 +36,7 @@ export async function AccountSignUp(formData: FormData){
       }
     });
 
-    return {success: true}
+    
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch(err: any){
     return {errors: {email: {errors: [err.message]}}};
