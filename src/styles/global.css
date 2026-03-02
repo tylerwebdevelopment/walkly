@@ -7,10 +7,21 @@
 @import url('./typography.css');
 @import url('./utilities.css');
 
-body{
+
+
+body {
   background-color: hsl(0 0 95%);
   font-family: var(--font-body);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
 }

@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 // Import Fonts
 import { Inter, Poppins } from 'next/font/google';
 // Import Global.css
-import '@/app/globals.css';
-import '@/styles/global.css';
+import './globals.css';
 
 
 //Import Navbar and Footer Components for Default Layout
@@ -37,10 +36,11 @@ export default async function RootLayout({
   });
   return (
     <html className={`${inter.variable} ${poppins.variable}`} lang="en">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body>
-        <div className=''>
+        <div className='flex flex-col min-h-screen'>
           <Navbar />
-          <main className=''>{children}</main>
+          <main className='flex flex-1'>{children}</main>
           <Footer />
         </div>
       </body>
